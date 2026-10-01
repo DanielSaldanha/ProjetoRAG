@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { createDocument, search } from "../controllers/controller";
+import { createDocument, search, FindDocumentById } from "../controllers/controller";
 
 const router = Router();
 
@@ -12,5 +12,7 @@ router.post('/documents', createDocument);
 
 // Busca: ?q=pergunta&limit=5 → retorna chunks relevantes + prompt montado
 router.get('/search', search);
+
+router.get('/search/:id', FindDocumentById);
 
 export default router;

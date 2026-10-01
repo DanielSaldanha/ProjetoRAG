@@ -11,6 +11,12 @@ export interface ChunkSearchResult {
     rank: number;
 }
 
+export interface DocSearch {
+    id: number,
+    title: string,
+    content: string,
+}
+
 export class RagRepository {
     // Salva um documento base
     static async createDocument(data: NewDocument) {
